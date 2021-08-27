@@ -1,77 +1,52 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <title>Fabric Versions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/default.min.css">
+    <meta charset="utf-8" />
+    <title>Fabric 版本</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/default.min.css" />
 </head>
-
 <body>
-<h1>Fabric Latest Versions</h1>
-
-<img alt="Discord" src="https://img.shields.io/discord/507304429255393322.svg?label=discord"> <img
-        alt="GitHub stars" src="https://img.shields.io/github/stars/FabricMC/yarn.svg?label=Yarn&style=social"> <img
-        alt="GitHub stars" src="https://img.shields.io/github/stars/FabricMC/fabric.svg?label=Fabric&style=social">
-
-<p>Minecraft Version:
-    <select name="versions" id="versions" onchange="updateSelection()">
-    </select>
-</p>
-<p>Note fabric-api version may not be the correct version for the given minecraft version. See the <a
-        href="https://minecraft.curseforge.com/projects/fabric/files">curseforge</a> page.</p>
-
+<h1>Fabric 模组开发依赖</h1>
+<img alt="Discord" src="https://img.shields.io/discord/507304429255393322.svg?label=discord" />
+<img alt="GitHub stars" src="https://img.shields.io/github/stars/FabricMC/yarn.svg?label=Yarn&amp;style=social" />
+<img alt="GitHub stars" src="https://img.shields.io/github/stars/FabricMC/fabric.svg?label=Fabric&amp;style=social" />
+<p>您可以从此页面来查找 Fabric 模组开发时所用的基本依赖。</p>
+<h2>Fabric 依赖版本</h2>
+<p>Minecraft 版本: <select name="versions" id="versions" onchange="updateSelection()"> </select> </p>
+<p>注意 fabric-api 版本可能并非对应给定 Minecraft 版本. 请查看 <a href="https://minecraft.curseforge.com/projects/fabric/files">CurseForge</a> 页面.</p>
 <h3>build.gradle</h3>
-
-
 <div name="code">
-        <pre><code class="gradle">dependencies {
-    minecraft "com.mojang:minecraft:{minecraft_version}"
-    mappings "net.fabricmc:yarn:{yarn_version}:v2"
-    modImplementation "net.fabricmc:fabric-loader:{loader_version}"
-            
+   <pre><code class="gradle">dependencies {
+    minecraft &quot;com.mojang:minecraft:{minecraft_version}&quot;
+    mappings &quot;net.fabricmc:yarn:{yarn_version}:v2&quot;
+    modImplementation &quot;net.fabricmc:fabric-loader:{loader_version}&quot;
+
     //Fabric api
-    modImplementation "{fabric_maven}{fabric_version}"
+    modImplementation &quot;{fabric_maven}{fabric_version}&quot;
 }</code></pre>
 </div>
-
-
-<h3>gradle.properties (Example Mod)</h3>
+<h3>gradle.properties (示例模组)</h3>
 <div name="code">
-        <pre><code class="properties">minecraft_version={minecraft_version}
+   <pre><code class="properties">minecraft_version={minecraft_version}
 yarn_mappings={yarn_version}
 loader_version={loader_version}
 
 #Fabric api
 fabric_version={fabric_version}</code></pre>
 </div>
-
-<br>
-<hr>
-
-
-<h1>Mappings Migration</h1>
-<p>Mappings can be auto updated by using the following command. See the <a
-        href="https://fabricmc.net/wiki/tutorial:migratemappings">wiki page</a> for more help.</p>
+<br />
+<hr />
+<h2>迁移映射表</h2>
+<p>映射表可以使用以下命令自动更新. 请查看 <a href="https://fabricmc.net/wiki/tutorial:migratemappings">百科</a> 页面获取帮助.</p>
 <div name="code">
-    <pre><code class="bash">gradlew migrateMappings --mappings "{yarn_version}"</code></pre>
+    <pre><code class="bash">gradlew migrateMappings --mappings &quot;{yarn_version}&quot;</code></pre>
 </div>
-
-<hr>
-<h1>Loom Version</h1>
-
-<h3>The recommended loom version for Minecraft 1.17 is <strong>0.9.+</strong></h3>
-<h4>The recommended loom version for Minecraft 1.16 and below is <strong>0.7-SNAPSHOT</strong></h4>
-
-<!-- <h4>The unstable loom version is <strong>0.2.7-SNAPSHOT</strong></h4> -->
-
-
-</body>
-
+<hr />
+<h2>Fabric-Loom 版本</h2>
+<h4>对于 Minecraft 1.17 及以上版本推荐 Fabric-Loom <strong>0.9.+</strong></h4>
+<h4>对于 Minecraft 1.16 及以下版本推荐 Fabric-Loom <strong>0.7-SNAPSHOT</strong></h4>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
-<script charset="UTF-8"
-        src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/gradle.min.js"></script>
-
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/gradle.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', (event) => {
         document.querySelectorAll('pre code').forEach((block) => {
@@ -79,7 +54,6 @@ fabric_version={fabric_version}</code></pre>
         });
     });
 </script>
-
 <script>
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -291,5 +265,5 @@ fabric_version={fabric_version}</code></pre>
     }
 
 </script>
-
+</body>
 </html>
