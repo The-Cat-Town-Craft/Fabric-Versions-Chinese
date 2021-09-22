@@ -155,23 +155,23 @@ fabric_version={fabric_version}</code></pre>
 
         var branch = "1.15"
         //TODO make this better
-        if (version === "1.14.4") {
+        if(version === "1.14.4"){
             branch = "1.14"
         }
         if (version.startsWith("1.16")) {
             branch = "1.16"
         }
-        if (version.startsWith("21w") || version.startsWith("20w") || version.startsWith("1.17")) {
+        if (version.startsWith("20w") || version.startsWith("1.17")) {
             branch = "1.17"
+        }
+        if (version.startsWith("21w") || version.startsWith("1.18")) {
+            branch = "1.18"
         }
         if (version === "1.16.1") {
             branch = "1.16.1"
         }
         if (version === "20w14infinite") {
             branch = "20w14infinite"
-        }
-        if (version.startsWith("1.18_experimental")) {
-            branch = "1.18_experimental"
         }
         findVersion(versionUrl, branch, version,
             function (fabricVersion) {
